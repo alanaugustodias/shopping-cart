@@ -1,27 +1,2 @@
-# Ignore installed node modules
 node_modules
-
-# Ignore final files
 dist
-
-# Ignore githooks output
-output/
-
-# Directories #
-backend/
-
-# Ignore logs
-npm-debug.log
-
-# Ignore config
-.vscode
-
-# Ignore alignment debug images
-assets/debug
-
-/Artifacts/
-/choco/
-/tools/
-
-# Ignore Workflows
-workflows/

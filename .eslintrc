@@ -69,7 +69,7 @@
     ]
   },
   "globals": {
-    "__DEV__": true,
+    "jest": true,
     "expect": true,
     "window": true,
     "document": true
@@ -77,12 +77,5 @@
   "env": {
     "mocha": true,
     "browser": true
-  },
-  "settings": {
-    "import/resolver": {
-        "webpack": {
-            "config": "../config/webpack.dev.config.js"
-        }
-    }
   }
 }
