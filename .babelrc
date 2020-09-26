@@ -1,0 +1,62 @@
+{
+    "presets": [
+        "@babel/preset-env",
+        "@babel/preset-react"
+    ],
+    "plugins": [
+        "@babel/transform-object-assign",
+        "@babel/plugin-syntax-dynamic-import",
+        "@babel/transform-runtime"
+    ],
+    "env": {
+        "development": {
+            "plugins": [
+                [
+                    "react-transform",
+                    {
+                        "transforms": [
+                            {
+                                "transform": "react-transform-hmr",
+                                "imports": [
+                                    "react"
+                                ],
+                                "locals": [
+                                    "module"
+                                ]
+                            },
+                            {
+                                "transform": "react-transform-catch-errors",
+                                "imports": [
+                                    "react",
+                                    "redbox-react"
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            ]
+        },
+        "test": {
+            "plugins": [
+                "@babel/plugin-proposal-class-properties",
+                "@babel/plugin-proposal-object-rest-spread",
+                "@babel/syntax-dynamic-import"
+            ],
+            "presets": [
+                "jest",
+                "@babel/preset-react",
+                [
+                    "@babel/preset-env",
+                    {
+                        "debug": false,
+                        "modules": "commonjs",
+                        "targets": {
+                            "node": "current"
+                        },
+                        "useBuiltIns": "entry"
+                    }
+                ]
+            ]
+        }
+    }
+}
