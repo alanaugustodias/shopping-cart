@@ -34117,7 +34117,7 @@ var companyLogo = 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Fon
   };
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_style__WEBPACK_IMPORTED_MODULE_3__["default"].Header, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    href: "https://google.com/",
+    href: "https://reactjs.org/",
     target: "blank"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_style__WEBPACK_IMPORTED_MODULE_3__["default"].Logo, {
     src: companyLogo
@@ -35206,4 +35206,4 @@ module.exports = __webpack_require__(/*! ./index */"./index.js");
 
 /******/ });
 });
-//# sourceMappingURL=main-9bc64ec1856c815a23bf.js.map
+//# sourceMappingURL=main-deebb322918ce1ba225c.js.map
