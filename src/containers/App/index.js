@@ -1,9 +1,15 @@
 import React from 'react';
-import { Header, Footer, ProductsList } from '../../components';
+import {
+    CartModal,
+    Header,
+    Footer,
+    ProductsList
+} from '../../components';
 
 export default () => (
-    <section className="page-content">
+    <section>
         <Header />
+        <CartModal />
         <ProductsList />
         <Footer />
     </section>

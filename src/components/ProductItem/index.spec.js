@@ -3,7 +3,12 @@ import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
 import { mount } from 'enzyme';
 import ProductItem from '.';
-import { addProductToCart } from '../../actions/cart';
+import {
+    addProductToCart,
+    removeProductFromCart,
+    addProductToWishlist,
+    removeProductFromWishlist
+} from '../../actions';
 
 function mountComponent(store, product) {
     return mount(<Provider store={store}><ProductItem {...product} /></Provider>);
@@ -11,16 +16,11 @@ function mountComponent(store, product) {
 
 describe('ProductItem Unit Tests', () => {
     const initialState = {
-        products: {
-            productsList: [
-                { id: 1, name: 'Test 1' },
-                { id: 2, name: 'Test 2' },
-                { id: 3, name: 'Test 3' },
-                { id: 4, name: 'Test 4' }
-            ]
-        },
         cart: {
             cartProducts: []
+        },
+        wishlist: {
+            wishlistProducts: []
         }
     };
 
@@ -36,16 +36,47 @@ describe('ProductItem Unit Tests', () => {
         const product = { id: 1, name: 'ASDASD' };
         const wrapper = mountComponent(store, product);
         expect(wrapper.length).toBe(1);
-        expect(wrapper.find('button').length).toBe(1);
     });
 
-    it('should add Product to Cart', () => {
-        const product = { id: 1, name: 'ASDASD' };
+    it('should dispatch addProductToCart action', () => {
+        const product = { id: 1, name: 'ASDASD', price: '20.00' };
         const wrapper = mountComponent(store, product);
-        wrapper.find('button').simulate('click');
+        wrapper.find('button').at(0).simulate('click');
         expect(store.dispatch).toHaveBeenCalledTimes(1);
         expect(store.dispatch).toHaveBeenCalledWith(
             addProductToCart(product)
+        );
+    });
+
+    it('should dispatch removeProductFromCart action', () => {
+        const product = { id: 1, name: 'ASDASD', price: '20.00' };
+        store.getState().cart.cartProducts.push(product);
+        const wrapper = mountComponent(store, product);
+        wrapper.find('button').at(0).simulate('click');
+        expect(store.dispatch).toHaveBeenCalledTimes(1);
+        expect(store.dispatch).toHaveBeenCalledWith(
+            removeProductFromCart(product)
+        );
+    });
+
+    it('should dispatch addProductToWishlist action', () => {
+        const product = { id: 1, name: 'ASDASD', price: '20.00' };
+        const wrapper = mountComponent(store, product);
+        wrapper.find('button').at(1).simulate('click');
+        expect(store.dispatch).toHaveBeenCalledTimes(1);
+        expect(store.dispatch).toHaveBeenCalledWith(
+            addProductToWishlist(product)
+        );
+    });
+
+    it('should dispatch removeProductFromWishlist action', () => {
+        const product = { id: 1, name: 'ASDASD', price: '20.00' };
+        store.getState().wishlist.wishlistProducts.push(product);
+        const wrapper = mountComponent(store, product);
+        wrapper.find('button').at(1).simulate('click');
+        expect(store.dispatch).toHaveBeenCalledTimes(1);
+        expect(store.dispatch).toHaveBeenCalledWith(
+            removeProductFromWishlist(product)
         );
     });
 });

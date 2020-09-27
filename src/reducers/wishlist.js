@@ -8,23 +8,20 @@ const initialState = {
     totalOfProducts: 0
 };
 
-const addProduct = (state, product) => {
-    if (!state.wishlistProducts.includes(product)) {
-        state.wishlistProducts.push(product);
+const addProduct = (currentState, product) => {
+    const newState = { ...currentState };
+    if (!newState.wishlistProducts.some(prd => prd.id === product.id)) {
+        newState.wishlistProducts.push(product);
     }
-
-    return {
-        ...state,
-        totalOfProducts: state.wishlistProducts.length
-    };
+    newState.totalOfProducts = newState.wishlistProducts.length;
+    return newState;
 };
 
-const removeProduct = (state, product) => {
-    state.wishlistProducts.remove(product);
-    return {
-        ...state,
-        totalOfProducts: state.wishlistProducts.length
-    };
+const removeProduct = (currentState, product) => {
+    const newState = { ...currentState };
+    newState.wishlistProducts = newState.wishlistProducts.filter(prd => prd.id !== product.id);
+    newState.totalOfProducts = newState.wishlistProducts.length;
+    return newState;
 };
 
 export default (state = initialState, { type, payload }) => {

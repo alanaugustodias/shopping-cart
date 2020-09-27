@@ -1,10 +1,11 @@
 import styled from 'styled-components';
 import { Cart } from '@styled-icons/boxicons-regular/Cart';
 import { Heart } from '@styled-icons/boxicons-regular/Heart';
+import Style from '../../style';
 
 const Header = styled.header`
   height: 80px;
-  background: #fbfbff;
+  background-color: ${Style.GlobalColors.lightGrey};
   -webkit-box-shadow: 0px 2px 4px 0px rgba(176,176,176,1);
   -moz-box-shadow: 0px 2px 4px 0px rgba(176,176,176,1);
   box-shadow: 0px 2px 4px 0px rgba(176,176,176,1);
@@ -36,13 +37,13 @@ const NavbarItem = styled.div`
 `;
 
 const CartIcon = styled(Cart)`
-    color: #5125db;
+    color: ${Style.GlobalColors.primary};
     width: 36px;
     height: 36px;
   `;
 
 const WishlistIcon = styled(Heart)`
-    color: #5125db;
+    color: ${Style.GlobalColors.primary};
     width: 36px;
     height: 36px;
   `;
@@ -51,7 +52,7 @@ const ProductsLength = styled.div`
   position: absolute;
   bottom: 15px;
   right: 5px;
-  background-color: #5125db;
+  background-color: ${Style.GlobalColors.primary};
   color: white;
   width: 24px;
   height: 24px;
@@ -62,11 +63,11 @@ const ProductsLength = styled.div`
 `;
 
 export default {
-  CartIcon,
-  Header,
-  Logo,
-  Navbar,
-  NavbarItem,
-  ProductsLength,
-  WishlistIcon,
+    CartIcon,
+    Header,
+    Logo,
+    Navbar,
+    NavbarItem,
+    ProductsLength,
+    WishlistIcon,
 };
