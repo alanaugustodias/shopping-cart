@@ -12,7 +12,7 @@ const Header = styled.header`
 `;
 
 const Logo = styled.img`
-  width: 150px;
+  width: 40px;
   height: 40px;
   padding: 15px 20px;
 `;
