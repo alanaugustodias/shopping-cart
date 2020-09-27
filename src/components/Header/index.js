@@ -16,7 +16,7 @@ export default () => {
 
     return (
         <Style.Header>
-            <a href="https://google.com/" target="blank">
+            <a href="https://reactjs.org/" target="blank">
                 <Style.Logo src={companyLogo} />
             </a>
             <Style.Navbar>

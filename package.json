@@ -6,7 +6,7 @@
     "name": "Alan Dias",
     "url": "https://alanaugustodias.github.io/shopping-cart/"
   },
-  "homepage": "https://alanaugustodias.github.io/shopping-cart/",
+  "homepage": "https://alanaugustodias.github.io/shopping-cart",
   "contributors": [
     "Alan Dias"
   ],
@@ -52,6 +52,7 @@
     "babel-jest": "^24.8.0",
     "babel-loader": "^8.0.6",
     "babel-plugin-react-transform": "^3.0.0",
+    "clean-webpack-plugin": "^3.0.0",
     "cross-env": "^7.0.2",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
