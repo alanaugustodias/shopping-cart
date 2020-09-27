@@ -1,3 +1,7 @@
+## Live Demo
+
+[Click here](https://alanaugustodias.github.io/shopping-cart/) to check out a live-demo of this project
+
 ## Project
 
 This repo was built to show a Shopping Cart example.
